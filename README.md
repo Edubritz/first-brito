@@ -55,10 +55,8 @@ Para visualizar o projeto em sua máquina local, siga as etapas abaixo:
 
 1. Clone este repositório:
    ```bash
-   https://edubritz.github.io/first-brito/
-
-
-   ```markdown
+   https://github.com/Edubritz/first-brito.git
+   ```
 # Guia Completo: Programação Declarativa com Ênfase em Erlang
 
 Este projeto tem como objetivo apresentar uma compreensão detalhada sobre *Programação Declarativa*, utilizando a linguagem **Erlang** como referência central. O projeto foi proposto pela professora Kadidja, no curso de Ciência da Computação da *Universidade UDF*.
