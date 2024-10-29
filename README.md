@@ -53,4 +53,4 @@ Para visualizar o projeto em sua máquina local, siga as etapas abaixo:
 
 1. Clone este repositório:
    ```bash
-https://edubritz.github.io/first-brito/
+   https://edubritz.github.io/first-brito/
