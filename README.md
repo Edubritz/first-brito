@@ -1,6 +1,7 @@
 # Guia Completo: Programação Declarativa com Ênfase em Erlang
 
 Este projeto tem como objetivo apresentar uma compreensão detalhada sobre *Programação Declarativa, utilizando a linguagem **Erlang* como referência central. O projeto foi proposto pela professora Kadidja, no curso de Ciência da Computação da *Universidade UDF*.
+
 **Url do projeto:** https://edubritz.github.io/first-brito/
 
 ---
