@@ -166,7 +166,7 @@ Contribuições são bem-vindas! Se você tiver sugestões ou melhorias, fique �
 - **Lucas José da Silva Germano** - RGM: 29418101
 - **Victor dos Santos Silva** - RGM: 29789613
 - **Hugo Borges Pereira da Silva** - RGM: 30253471
-- **Matheus Fernandes Duda** - 29985684
+- **Matheus Fernandes Duda** - RGM: 29985684
 
 ---
 
