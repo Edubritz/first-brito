@@ -112,12 +112,12 @@ Para visualizar o projeto em sua máquina local, siga as etapas abaixo:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seuusuario/seuprojeto.git
+   git clone https://github.com/Edubritz/first-brito.git
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd seuprojeto
+   cd first-brito
    ```
 
 3. Abra o arquivo `index.html` no navegador para iniciar o guia.
