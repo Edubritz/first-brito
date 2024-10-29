@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo: Programação Declarativa - Página 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link para importar ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #B22222;
+            --secondary-color: #DC143C;
+            --accent-color: #FF6347;
+            --background-color: #fff;
+            --text-color: #333;
+            --light-text-color: #666;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+            background-size: 300% 300%;
+            animation: gradientAnimation 8s ease infinite;
+            color: white;
+            padding: 8rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Barra branca abaixo do header */
+        .barra-branca {
+            background-color: white;
+            height: 3rem;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section.cards {
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 30%;
+            text-align: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .card:hover {
+            transform: scale(1.1); /* Animação de destaque */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 5px;
+            background: var(--primary-color);
+            top: 0;
+            left: 0;
+            border-radius: 15px 0 0 15px;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+        }
+
+        .card ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .card ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .card ul li i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Pop-up com animação */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* Fundo preto com opacidade */
+            opacity: 0; /* Inicialmente invisível */
+            transition: opacity 0.5s ease; /* Animação de fade in */
+        }
+
+        .modal.show {
+            display: block; 
+            opacity: 1; /* Fade in ao ser exibido */
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 80%;
+            }
+
+            .modal-content {
+                width: 90%; /* Pop-up mais responsivo */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .card h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header data-aos="fade-down">
+    <h1>Programação Declarativa</h1>
+    <p>Explorando um novo paradigma de desenvolvimento de software</p>
+</header>
+
+<!-- Barra branca abaixo do header -->
+<div class="barra-branca" data-aos="fade-up"></div>
+
+<section class="cards">
+    <!-- Primeiro Card -->
+    <div class="card" data-aos="fade-right">
+        <h3>Sobre a Programação Declarativa</h3>
+        <ul>
+            <li><i class="fas fa-globe"></i> <a href="declarativa.html#origem">Origem</a></li>
+            <li><i class="fas fa-list-alt"></i> <a href="declarativa.html#caracteristicas">Características</a></li>
+            <li><i class="fas fa-thumbs-up"></i> <a href="declarativa.html#comparativo">Vantagens</a></li>
+            <li><i class="fas fa-thumbs-down"></i> <a href="declarativa.html#comparativo">Desvantagens</a></li>
+        </ul>
+    </div>
+
+    <!-- Segundo Card - Erlang -->
+    <div class="card" data-aos="fade-left">
+        <h3>Erlang <i class="fab fa-erlang"></i></h3>
+        <ul>
+            <li><i class="fas fa-globe"></i> <a href="erlang.html#origem">Origem</a></li>
+            <li><i class="fas fa-list-alt"></i> <a href="erlang.html#caracteristicas">Características</a></li>
+            <li><i class="fas fa-thumbs-up"></i> <a href="erlang.html#vantagens">Vantagens</a></li>
+            <li><i class="fas fa-thumbs-down"></i> <a href="erlang.html#desvantagens">Desvantagens</a></li>
+        </ul>
+    </div>
+
+    <!-- Terceiro Card - Aplicação do Erlang -->
+    <div class="card" data-aos="fade-up">
+        <h3>Aplicação do Erlang <i class="fas fa-code"></i></h3>
+        <ul>
+            <li><i class="fas fa-file-alt"></i> <a href="aplicacao.html#sintaxe">Sintaxe e Semântica</a></li>
+            <li><i class="fas fa-key"></i> <a href="aplicacao.html#palavras-reservadas">Palavras Reservadas</a></li>
+            <li><i class="fas fa-robot"></i> <a href="aplicacao.html#erlang">Erlang</a></li>
+            <li><i class="fas fa-folder"></i> <a href="aplicacao.html#arquivos">Tipo de Arquivos</a></li>
+            <li><i class="fas fa-database"></i> <a href="aplicacao.html#dados">Tipo de Dados</a></li>
+            <li><i class="fas fa-exchange-alt"></i> <a href="aplicacao.html#concorrencia">Concorrência</a></li>
+        </ul>
+    </div>
+
+    <!-- Novo Card - Fontes -->
+    <div class="card" data-aos="fade-up">
+        <h3>Fontes e Recomendações <i class="fas fa-book"></i></h3>
+        <ul>
+            <li><i class="fas fa-file-alt"></i> <a href="fontes.html">Ver Fontes Utilizadas</a></li>
+            <li><i class="fas fa-book"></i> <a href="fontes.html#recomendacao-livro">Livro Recomendado</a></li>
+        </ul>
+    </div>
+</section>
+
+<footer data-aos="fade-up">
+    <p>&copy; 2024 - Grupo Vermelho. Todos os direitos reservados.</p>
+    <p><a href="fontes.html" style="color: #fff; text-decoration: underline;">Ver Fontes e Recomendações</a></p> <!-- Link no footer -->
+</footer>
+
+<!-- Modal Pop-up -->
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Acompanhe nossa apresentação pelo seu celular</h2>
+        <img src="frame.png" alt="QR Code" style="width: 100%; max-width: 300px;">
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+
+    // Modal script
+    var modal = document.getElementById("qrModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando carregar a página, abrir o modal com animação
+    window.onload = function() {
+        modal.classList.add('show');
+    }
+
+    // Quando clicar no X (close), fechar o modal
+    span.onclick = function() {
+        modal.classList.remove('show');
+    }
+
+    // Quando clicar fora do modal, fechar também
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.classList.remove('show');
+        }
+    }
+</script>
+
+</body>
+</html>

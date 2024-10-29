@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes e Recomendações</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Estilos básicos */
+        :root {
+            --primary-color: #B22222;
+            --secondary-color: #DC143C;
+            --accent-color: #FF6347;
+            --background-color: #fff;
+            --text-color: #333;
+            --light-text-color: #666;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Estilo da lista de fontes */
+        .source-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .source-list li {
+            font-size: 1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .source-list li::before {
+            content: "📖";
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .source-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .source-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo da recomendação de livro */
+        .book-recommendation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-recommendation img {
+            max-width: 150px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .book-recommendation img:hover {
+            transform: scale(1.05);
+        }
+
+        .book-recommendation p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fontes e Recomendações</h1>
+    <p>Referências e sugestões para um aprofundamento no estudo de programação declarativa</p>
+</header>
+
+<section id="fontes">
+    <div class="section-title">
+        <h2>Fontes Utilizadas</h2>
+    </div>
+    <div class="content">
+        <ul class="source-list">
+            <li><a href="https://phoenixnap.com.br/glossário/programação-declarativa" target="_blank">PhoenixNAP - Programação Declarativa</a></li>
+            <li><a href="https://foldoc.org/declarative%2Blanguage" target="_blank">FOLDOC - Declarative Language</a></li>
+            <li><a href="https://www.csc.liv.ac.uk/~frans/OldLectures/2CS24/declarative.html#detail" target="_blank">Universidade de Liverpool - Introdução à Programação Declarativa</a></li>
+            <li><a href="https://link.springer.com/referenceworkentry/10.1007/978-1-4419-9863-7_1334" target="_blank">Springer - Programação Declarativa</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Programação_declarativa" target="_blank">Wikipedia - Programação Declarativa</a></li>
+            <li><a href="https://phoenixnap.com.br/glossário/programação-declarativa" target="_blank">PhoenixNAP - Programação Declarativa (Resumo)</a></li>
+            <li><a href="https://www.erlang.org/doc/system/conc_prog.html#content" target="_blank">Erlang Documentation - Concurrent Programming</a></li>
+            <li><a href="https://www.erlang.org/doc/readme.html" target="_blank">Erlang Documentation - README</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="recomendacao-livro">
+    <div class="section-title">
+        <h2>Recomendação de Livro</h2>
+    </div>
+    <div class="content book-recommendation">
+        <img src="livro.jpg" alt="Capa do Livro Programming Erlang">
+        <p><strong>Programming Erlang – Software for a Concurrent World</strong> é um guia completo para desenvolvedores que buscam aprender a linguagem Erlang. Escrito por Joe Armstrong, um dos criadores do Erlang, o livro oferece uma introdução prática e aprofundada à programação concorrente e à criação de sistemas altamente disponíveis e tolerantes a falhas.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 - Grupo Vermelho. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+
+</body>
+</html>
